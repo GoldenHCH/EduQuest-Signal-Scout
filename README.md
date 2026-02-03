@@ -284,3 +284,10 @@ Add `--verbose` to any script for debug output.
 ## License
 
 This project was created for the 2026 GTM Hackathon by Mobly.
+
+---
+
+## Pitch Deck
+
+- `docs/pitch_deck.md` - Slide-by-slide pitch deck (Marp/Markdown)
+- `docs/pitch_deck_speaker_notes.md` - Short presenter notes
