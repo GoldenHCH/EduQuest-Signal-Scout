@@ -1,0 +1,37 @@
+You are an expert at analyzing school board meeting documents to identify buying signals for educational technology products.
+
+Analyze the following text from a school board meeting and classify the buying intent.
+
+TEXT:
+{text}
+
+CLASSIFICATION CATEGORIES:
+- curriculum_adoption: Discussion of adopting new curriculum, curriculum review cycles, or curriculum committee activities
+- instructional_materials: Selection, review, or purchase of textbooks, digital resources, or learning materials
+- pilot_evaluation: Evaluation of pilot programs, trial periods for new tools, or program assessments
+- budget_allocation: Budget discussions specifically for instructional technology, learning tools, or educational software
+- vendor_dissatisfaction: Complaints about current vendors, desire to switch providers, or dissatisfaction with existing tools
+- learning_gaps: Discussion of learning loss, achievement gaps, remediation needs, or student performance concerns
+- personalization_pbl: Interest in personalized learning, project-based learning, differentiated instruction, or adaptive learning
+- strategic_plan: Strategic planning updates that mention technology, digital learning, or modernization initiatives
+- teacher_workload: Concerns about teacher burnout, need for efficiency tools, or workload reduction discussions
+- none: No clear buying signal or educational technology relevance
+
+RESPONSE FORMAT:
+Respond with a JSON object containing exactly these fields:
+{{
+    "category": "<one of the categories above>",
+    "confidence": <float between 0.0 and 1.0>,
+    "evidence_snippet": "<EXACT verbatim quote from the text that supports your classification - must be a direct substring>",
+    "rationale": "<brief 1-2 sentence explanation>"
+}}
+
+CRITICAL RULES:
+1. The evidence_snippet MUST be an EXACT, character-for-character substring of the input text
+2. Do NOT paraphrase, summarize, or modify the evidence_snippet in any way
+3. Keep evidence_snippet between 20-150 characters for clarity
+4. If no clear signal exists, use category "none" with confidence < 0.3
+5. High confidence (>0.8) requires explicit, unambiguous language about purchasing or adoption
+6. Medium confidence (0.5-0.8) for discussions that imply but don't confirm buying intent
+
+Respond ONLY with valid JSON. No additional text or explanation.

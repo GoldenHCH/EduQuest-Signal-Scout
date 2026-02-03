@@ -1,0 +1,30 @@
+# Core
+python-dotenv>=1.0.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# Web Scraping
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
+# PDF Processing
+pdfplumber>=0.10.0
+pypdf>=4.0.0
+
+# LLM & LangGraph
+langchain>=0.3.0
+langchain-openai>=0.2.0
+langgraph>=0.2.0
+tiktoken>=0.7.0
+
+# Data Processing
+pandas>=2.1.0
+
+# Logging & CLI
+loguru>=0.7.0
+typer>=0.9.0
+rich>=13.7.0
+
+# Optional: Streamlit viewer
+streamlit>=1.30.0

@@ -1,0 +1,62 @@
+You are an expert at scoring educational technology sales opportunities for EduQuest, a personalized, quest-driven learning platform that helps students engage with curriculum through gamified learning experiences.
+
+Given the following classification of a school board meeting signal, score the opportunity from 0-100.
+
+SIGNAL DETAILS:
+- District: {district}
+- Meeting Date: {meeting_date}
+- Category: {category}
+- Confidence: {confidence}
+- Evidence: {evidence}
+- Classification Rationale: {rationale}
+
+SCORING CRITERIA (each component 0-25 points):
+
+1. INTENT STRENGTH (0-25):
+   - 20-25: Explicit RFP, vendor selection, or immediate purchase decision
+   - 15-19: Active evaluation phase, pilot approval, or budget allocation
+   - 10-14: Planning stage, committee formation, or needs assessment
+   - 5-9: General discussion with implied future action
+   - 0-4: Informational only, no clear action timeline
+
+2. TIME WINDOW (0-25):
+   - 20-25: Decision expected within 1-3 months
+   - 15-19: Decision expected within 3-6 months
+   - 10-14: Decision expected within 6-12 months
+   - 5-9: Long-term planning (1+ years)
+   - 0-4: No timeline indicators
+
+3. EDUQUEST FIT (0-25):
+   - 20-25: Explicit need for personalized/gamified learning, engagement tools
+   - 15-19: General interest in student engagement, adaptive learning
+   - 10-14: Curriculum adoption that could include digital tools
+   - 5-9: Indirect fit (e.g., general technology modernization)
+   - 0-4: Poor fit with EduQuest's offerings
+
+4. EVIDENCE QUALITY (0-25):
+   - 20-25: Official board action, documented vote, or formal RFP
+   - 15-19: Detailed discussion with specific requirements
+   - 10-14: General discussion with some specifics
+   - 5-9: Vague or passing mention
+   - 0-4: Unclear or speculative
+
+RECOMMENDED NEXT STEPS:
+- reach_out_now: Score >= 70, or urgent timeline indicators
+- research_more: Score 50-69, need more context before outreach
+- monitor: Score < 50, track for future opportunities
+
+RESPONSE FORMAT:
+Respond with a JSON object containing exactly these fields:
+{{
+    "opportunity_score": <integer 0-100>,
+    "score_breakdown": {{
+        "intent_strength": <integer 0-25>,
+        "time_window": <integer 0-25>,
+        "eduquest_fit": <integer 0-25>,
+        "evidence_quality": <integer 0-25>
+    }},
+    "summary": "<2-3 sentence summary of the opportunity and why it matters>",
+    "recommended_next_step": "<reach_out_now|research_more|monitor>"
+}}
+
+Respond ONLY with valid JSON. No additional text or explanation.
